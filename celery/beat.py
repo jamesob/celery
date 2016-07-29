@@ -434,7 +434,7 @@ class PersistentScheduler(Scheduler):
         for _ in (1, 2):
             try:
                 self._store['entries']
-            except KeyError:
+            except KeyError, TypeError:
                 # new schedule db
                 try:
                     self._store['entries'] = {}
